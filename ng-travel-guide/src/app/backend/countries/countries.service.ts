@@ -12,7 +12,7 @@ export class CountriesService {
   constructor(private http: HttpClient) {}
 
   public countriesByContinent(continent: string): Observable<Array<Country>> {
-    return this.http.get("/assets/all.json").pipe(
+    return this.http.get("/assets/countries.json").pipe(
       map((list: Array<any>) =>
         list.map(country => this.relevantData(country))
       ),
@@ -31,7 +31,7 @@ export class CountriesService {
   }
 
   public loadCountryDetails(name: string): Observable<Country> {
-    return this.http.get("/assets/all.json").pipe(
+    return this.http.get("/assets/countries.json").pipe(
       map((list: Array<any>) =>
         list.map(country => this.relevantData(country))
       ),
