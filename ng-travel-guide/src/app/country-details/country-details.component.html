@@ -1,4 +1,4 @@
-<h2>{{name}}</h2>
+<h2>{{(details | async).name}}</h2>
 <img class="flag" src="{{(details | async).flag}}">
 
 <table>
@@ -17,5 +17,5 @@
 </table>
 <div>
   <button (click)="editCountry(name)" mat-raised-button color="primary">edit country</button>
-  <button (click)="deleteCountry(name)" mat-raised-button color="warn">delete country</button>
+  <button (click)="deleteCountry(id)" mat-raised-button color="warn">delete country</button>
 </div>

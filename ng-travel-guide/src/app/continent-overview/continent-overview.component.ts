@@ -1,12 +1,12 @@
-import { Component, OnInit, Input } from "@angular/core";
-import { Country } from "../backend/countries/country";
-import { CountriesService } from "../backend/countries/countries.service";
-import { Router, ActivatedRoute } from "@angular/router";
+import { Component, OnInit, Input } from '@angular/core';
+import { Country } from '../backend/countries/country';
+import { CountriesService } from '../backend/countries/countries.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: "app-continent-overview",
-  templateUrl: "./continent-overview.component.html",
-  styleUrls: ["./continent-overview.component.scss"]
+  selector: 'app-continent-overview',
+  templateUrl: './continent-overview.component.html',
+  styleUrls: ['./continent-overview.component.scss']
 })
 export class ContinentOverviewComponent implements OnInit {
   public countries: Array<Country>;
@@ -22,7 +22,7 @@ export class ContinentOverviewComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe(parameters => {
-      this.continent = parameters.get("name");
+      this.continent = parameters.get('name');
       this.loadCountries();
     });
   }
@@ -35,15 +35,15 @@ export class ContinentOverviewComponent implements OnInit {
       });
   }
 
-  public onclick(country: string) {
-    this.router.navigateByUrl("/country/" + country);
+  public onclick(countryId: number) {
+    this.router.navigateByUrl('/country/' + countryId);
   }
 
-  public editCountry(name: string) {
-    this.router.navigate(["/country-editor", name]);
+  public editCountry(countryId: number) {
+    this.router.navigate(['/country-editor', countryId]);
   }
 
-  public deleteCountry(name: string) {
-    this.countriesService.deleteCountry(name);
+  public deleteCountry(countryId: number) {
+    this.countriesService.deleteCountry(countryId);
   }
 }

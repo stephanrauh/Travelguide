@@ -1,17 +1,17 @@
-import { Component } from "@angular/core";
-import { FormBuilder, Validators } from "@angular/forms";
-import { ActivatedRoute } from "@angular/router";
-import { CountriesService } from "../backend/countries/countries.service";
-import { Country } from "../backend/countries/country";
-import { HttpClient } from "@angular/common/http";
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { CountriesService } from '../backend/countries/countries.service';
+import { Country } from '../backend/countries/country';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: "app-country-editor",
-  templateUrl: "./country-editor.component.html",
-  styleUrls: ["./country-editor.component.scss"]
+  selector: 'app-country-editor',
+  templateUrl: './country-editor.component.html',
+  styleUrls: ['./country-editor.component.scss']
 })
-export class CountryEditorComponent {
-  public name: string;
+export class CountryEditorComponent implements OnInit {
+  public id: number;
 
   addressForm = this.fb.group({
     capital: null,
@@ -26,9 +26,10 @@ export class CountryEditorComponent {
 
   public ngOnInit() {
     this.route.paramMap.subscribe(parameters => {
-      this.name = parameters.get("name");
-      this.countriesService.loadCountryDetails(this.name).subscribe(country => {
+      const name = parameters.get('name');
+      this.countriesService.loadCountryDetails(name).subscribe(country => {
         this.populateForm(country);
+        this.id = country.id;
       });
     });
   }
@@ -40,6 +41,6 @@ export class CountryEditorComponent {
 
   onSubmit() {
     alert("Thanks! You've subitted " + JSON.stringify(this.addressForm.value));
-    this.countriesService.updateCountry(name, this.addressForm.value);
+    this.countriesService.updateCountry(this.id, this.addressForm.value);
   }
 }
