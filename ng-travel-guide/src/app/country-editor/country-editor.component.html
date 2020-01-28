@@ -1,0 +1,33 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="country-card">
+    <mat-card-header>
+      <mat-card-title>Edit {{name}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Capital" formControlName="capital">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Population" formControlName="population">
+            <mat-error *ngIf="addressForm.controls['population'].hasError('required')">
+              Population is <strong>required</strong>
+            </mat-error>
+            <mat-error *ngIf="addressForm.controls['population'].hasError('pattern')">
+              Please enter a number.
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit"
+        [disabled]="addressForm.status==='INVALID'">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

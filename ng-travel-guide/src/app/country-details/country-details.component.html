@@ -1,0 +1,21 @@
+<h2>{{name}}</h2>
+<img class="flag" src="{{(details | async).flag}}">
+
+<table>
+  <tr>
+    <td>Continent:</td>
+    <td>{{(details | async).continent}}</td>
+  </tr>
+  <tr>
+    <td>Capital:</td>
+    <td>{{(details | async).capital}}</td>
+  </tr>
+  <tr>
+    <td>Population:</td>
+    <td>{{(details | async).population}}</td>
+  </tr>
+</table>
+<div>
+  <button (click)="editCountry(name)" mat-raised-button color="primary">edit country</button>
+  <button (click)="deleteCountry(name)" mat-raised-button color="warn">delete country</button>
+</div>
