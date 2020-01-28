@@ -34,4 +34,8 @@ export class ContinentOverviewComponent implements OnInit {
         this.countries = result;
       });
   }
+
+  public onclick(country: string) {
+    this.router.navigateByUrl("/country/" + country);
+  }
 }

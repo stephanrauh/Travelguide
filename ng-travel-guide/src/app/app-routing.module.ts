@@ -6,11 +6,13 @@ import { MatCardModule } from "@angular/material/card";
 import { HomeComponent } from "./home/home.component";
 import { ContinentOverviewComponent } from "./continent-overview/continent-overview.component";
 import { CountryDetailsComponent } from "./country-details/country-details.component";
+import { CountryEditorComponent } from "./country-editor/country-editor.component";
 
 const routes: Routes = [
   { path: "home", component: HomeComponent },
   { path: "continent/:name", component: ContinentOverviewComponent },
   { path: "country/:name", component: CountryDetailsComponent },
+  { path: "country-editor/:name", component: CountryEditorComponent },
   { path: "**", redirectTo: "home" }
 ];
 

@@ -17,6 +17,11 @@ import { ContinentOverviewComponent } from "./continent-overview/continent-overv
 import { HttpClientModule } from "@angular/common/http";
 import { HomeComponent } from './home/home.component';
 import { CountryDetailsComponent } from './country-details/country-details.component';
+import { CountryEditorComponent } from './country-editor/country-editor.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +30,8 @@ import { CountryDetailsComponent } from './country-details/country-details.compo
     ContinentComponent,
     ContinentOverviewComponent,
     HomeComponent,
-    CountryDetailsComponent
+    CountryDetailsComponent,
+    CountryEditorComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +44,11 @@ import { CountryDetailsComponent } from './country-details/country-details.compo
     MatIconModule,
     MatListModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    MatInputModule,
+    MatSelectModule,
+    MatRadioModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
