@@ -5,10 +5,12 @@ import { LayoutModule } from "@angular/cdk/layout";
 import { MatCardModule } from "@angular/material/card";
 import { HomeComponent } from "./home/home.component";
 import { ContinentOverviewComponent } from "./continent-overview/continent-overview.component";
+import { CountryDetailsComponent } from "./country-details/country-details.component";
 
 const routes: Routes = [
   { path: "home", component: HomeComponent },
   { path: "continent/:name", component: ContinentOverviewComponent },
+  { path: "country/:name", component: CountryDetailsComponent },
   { path: "**", redirectTo: "home" }
 ];
 

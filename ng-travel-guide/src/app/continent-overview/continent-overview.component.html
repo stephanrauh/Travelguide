@@ -3,7 +3,12 @@
 <table>
   <tr *ngFor="let country of countries">
     <td>
-      {{country.name}}
+      <div>
+        <img class="flag" src="{{country.flag}}">
+        <div class="country-name">
+          <a [routerLink]="['/country', country.name]"> {{country.name}}</a>
+        </div>
+      </div>
     </td>
   </tr>
 </table>

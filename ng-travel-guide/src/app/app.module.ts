@@ -16,6 +16,7 @@ import { MatCardModule } from "@angular/material/card";
 import { ContinentOverviewComponent } from "./continent-overview/continent-overview.component";
 import { HttpClientModule } from "@angular/common/http";
 import { HomeComponent } from './home/home.component';
+import { CountryDetailsComponent } from './country-details/country-details.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HomeComponent } from './home/home.component';
     NavigationComponent,
     ContinentComponent,
     ContinentOverviewComponent,
-    HomeComponent
+    HomeComponent,
+    CountryDetailsComponent
   ],
   imports: [
     BrowserModule,

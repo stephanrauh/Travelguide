@@ -23,7 +23,18 @@ export class CountriesService {
     return {
       name: country.name,
       flag: country.flag,
-      continent: country.region
+      continent: country.region,
+      population: country.population,
+      capital: country.capital
     } as Country;
+  }
+
+  public loadCountryDetails(name: string): Observable<Country> {
+    return this.http.get("/assets/all.json").pipe(
+      map((list: Array<any>) =>
+        list.map(country => this.relevantData(country))
+      ),
+      map(list => list.find(country => country.name === name))
+    );
   }
 }
