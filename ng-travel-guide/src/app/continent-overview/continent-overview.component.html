@@ -9,8 +9,8 @@
           <a (click)="onclick(country.name)"> {{country.name}}</a>
         </div>
         <div>
-          <button mat-raised-button color="primary">edit country</button>
-          <button mat-raised-button color="warn">delete country</button>
+          <button (click)="editCountry(country.name)" mat-raised-button color="primary">edit country</button>
+          <button (click)="deleteCountry(country.name)" mat-raised-button color="warn">delete country</button>
         </div>
       </div>
     </td>

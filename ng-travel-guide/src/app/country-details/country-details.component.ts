@@ -31,5 +31,7 @@ export class CountryDetailsComponent implements OnInit {
     this.router.navigate(["/country-editor", name]);
   }
 
-  public deleteCountry(name: string) {}
+  public deleteCountry(name: string) {
+    this.countriesService.deleteCountry(name);
+  }
 }

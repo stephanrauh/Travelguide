@@ -22,6 +22,7 @@ export class CountriesService {
 
   private relevantData(country: any): Country {
     return {
+      id: country.id,
       name: country.name,
       flag: country.flag,
       continent: country.region,
@@ -43,7 +44,7 @@ export class CountriesService {
     this.http.patch("/api/country", newValue).subscribe();
   }
 
-  public deleteCountry(id: string, newValue: PartiallyFilledCountry): void {
-    this.http.patch("/api/country", newValue).subscribe();
+  public deleteCountry(name: string): void {
+    this.http.delete("/api/country").subscribe();
   }
 }

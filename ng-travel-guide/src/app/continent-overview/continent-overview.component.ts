@@ -38,4 +38,12 @@ export class ContinentOverviewComponent implements OnInit {
   public onclick(country: string) {
     this.router.navigateByUrl("/country/" + country);
   }
+
+  public editCountry(name: string) {
+    this.router.navigate(["/country-editor", name]);
+  }
+
+  public deleteCountry(name: string) {
+    this.countriesService.deleteCountry(name);
+  }
 }
