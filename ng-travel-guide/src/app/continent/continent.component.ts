@@ -1,9 +1,9 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: "app-continent",
-  templateUrl: "./continent.component.html",
-  styleUrls: ["./continent.component.scss"]
+  selector: 'app-continent',
+  templateUrl: './continent.component.html',
+  styleUrls: ['./continent.component.scss']
 })
 export class ContinentComponent implements OnInit {
   @Input()
@@ -14,6 +14,6 @@ export class ContinentComponent implements OnInit {
   ngOnInit() {}
 
   public viewMore(): void {
-    console.log("View more");
+    console.log('View more');
   }
 }
