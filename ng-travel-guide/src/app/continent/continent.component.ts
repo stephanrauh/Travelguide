@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ContinentsService } from '../backend/continents/continents.service';
 
 @Component({
   selector: 'app-continent',

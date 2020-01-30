@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { CountryDetailsComponent } from './country-details/country-details.component';
 import { CountryEditorComponent } from './country-editor/country-editor.component';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
@@ -40,6 +41,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
+    MatGridListModule,
     MatSidenavModule,
     MatIconModule,
     MatListModule,

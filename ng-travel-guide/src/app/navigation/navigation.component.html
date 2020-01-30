@@ -3,13 +3,11 @@
     [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
+
       <a mat-list-item href="#">Home</a>
-      <a mat-list-item [routerLink]="'continent/Africa'">Africa</a>
-      <a mat-list-item [routerLink]="'continent/Americas'">Americas</a>
-      <a mat-list-item [routerLink]="['continent', 'Asia']">Asia</a>
-      <a mat-list-item [routerLink]="['continent', 'Oceania']">Oceania</a>
-      <a mat-list-item [routerLink]="['continent', 'Europe']">Europe</a>
-      <a mat-list-item [routerLink]="['continent', 'Polar']">Polar</a>
+      <div *ngFor="let continent of (continents | async)">
+        <a mat-list-item [routerLink]="'continent/'+continent">{{continent}}</a>
+      </div>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

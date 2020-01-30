@@ -1,24 +1,7 @@
-<table class="full-width">
-  <tr>
-    <td>
-      <app-continent [continent]="'Africa'"></app-continent>
-    </td>
-    <td>
-      <app-continent [continent]="'Americas'"></app-continent>
-    </td>
-    <td>
-      <app-continent [continent]="'Asia'"></app-continent>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <app-continent [continent]="'Europe'"></app-continent>
-    </td>
-    <td>
-      <app-continent [continent]="'Oceania'"></app-continent>
-    </td>
-    <td>
-      <app-continent [continent]="'Polar'"></app-continent>
-    </td>
-  </tr>
-</table>
+<mat-grid-list [cols]="2" rowHeight="1:1" [gutterSize]="'20px'">
+  <div style="width:100%" *ngFor="let continent of (continents | async)">
+    <mat-grid-tile>
+      <app-continent [continent]="continent"></app-continent>
+    </mat-grid-tile>
+  </div>
+</mat-grid-list>

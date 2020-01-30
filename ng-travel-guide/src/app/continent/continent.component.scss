@@ -1,3 +1,9 @@
-.one-third {
-  height: 300px;
+.full-width {
+  width: 90%;
+  height: 90%;
+}
+
+:host {
+  width: 90%;
+  height: 90%;
 }
